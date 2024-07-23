@@ -4,6 +4,7 @@ valor_01 = []
 valor_02 = []
 
 while True:
+    # Tente essa estrutura
     try:
         numero_01 = int(input("Digite o primeiro valor: "))
         valor_01.append(numero_01)
@@ -14,7 +15,7 @@ while True:
         operador = input("Digite o Operador (+, /, -, *) : ")
     
         operadores_permitidos = "+/-*"
-        if operador not in operadores_permitidos:
+        if operador not in operadores_permitidos: # Operadores que nao estajem entre "Operadores_permitidos" irá voltar para iteração
             print("Operadores não permitidos, digite novamente.")
             continue
              
@@ -33,7 +34,7 @@ while True:
             break
 
         elif operador == "/":
-            if numero_02 == 0:
+            if numero_02 or numero_01 == 0:
                 print("A divisão é por zero, então não é permitida.")
                 continue
             divi = numero_01 / numero_02
@@ -44,7 +45,7 @@ while True:
             mult = numero_01 * numero_02
             print(f"A Multiplicação entre {numero_01} e {numero_02} é: {mult}")
             break
-
+    # Caso Try de erro, executa except reiniciando o programa
     except ValueError:
         print("Digite um numero válido.")
         continue
